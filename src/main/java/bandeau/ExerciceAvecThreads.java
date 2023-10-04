@@ -20,7 +20,6 @@ public class ExerciceAvecThreads {
         s.playOn(b2);
         s.addEffect(new Zoom("Je zoome", 50), 1);
         s.playOn(b3);
-        s.addEffect(new Zoom("Je zoome", 50), 1);
         // On rejoue le scénario sur b1 quand le premier jeu est fini
         s.playOn(b1);
     }

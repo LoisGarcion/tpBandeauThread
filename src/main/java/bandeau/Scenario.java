@@ -38,14 +38,14 @@ public class Scenario {
      * @param repeats le nombre de répétitions pour cet effet
      */
     public void addEffect(Effect e, int repeats) {
+        readWriteLock.writeLock().lock();
         try {
             //On ajoute un sleep pour tester que le bandeau est bien bloqué en attendant l'ajout de l'effet
-            Thread.sleep(500);
+            Thread.sleep(1000);
         }
         catch (InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
-        readWriteLock.writeLock().lock();
         myElements.add(new ScenarioElement(e, repeats));
         readWriteLock.writeLock().unlock();
     }
